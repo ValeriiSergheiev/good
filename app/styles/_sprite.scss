@@ -1,0 +1,173 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$arrow-name: 'arrow';
+$arrow-x: 0px;
+$arrow-y: 40px;
+$arrow-offset-x: 0px;
+$arrow-offset-y: -40px;
+$arrow-width: 53px;
+$arrow-height: 31px;
+$arrow-total-width: 130px;
+$arrow-total-height: 103px;
+$arrow-image: '../images/sprite.png';
+$arrow: (0px, 40px, 0px, -40px, 53px, 31px, 130px, 103px, '../images/sprite.png', 'arrow', );
+$cut-name: 'cut';
+$cut-x: 53px;
+$cut-y: 40px;
+$cut-offset-x: -53px;
+$cut-offset-y: -40px;
+$cut-width: 41px;
+$cut-height: 30px;
+$cut-total-width: 130px;
+$cut-total-height: 103px;
+$cut-image: '../images/sprite.png';
+$cut: (53px, 40px, -53px, -40px, 41px, 30px, 130px, 103px, '../images/sprite.png', 'cut', );
+$enjoy-name: 'enjoy';
+$enjoy-x: 95px;
+$enjoy-y: 0px;
+$enjoy-offset-x: -95px;
+$enjoy-offset-y: 0px;
+$enjoy-width: 35px;
+$enjoy-height: 41px;
+$enjoy-total-width: 130px;
+$enjoy-total-height: 103px;
+$enjoy-image: '../images/sprite.png';
+$enjoy: (95px, 0px, -95px, 0px, 35px, 41px, 130px, 103px, '../images/sprite.png', 'enjoy', );
+$order-name: 'order';
+$order-x: 0px;
+$order-y: 0px;
+$order-offset-x: 0px;
+$order-offset-y: 0px;
+$order-width: 47px;
+$order-height: 40px;
+$order-total-width: 130px;
+$order-total-height: 103px;
+$order-image: '../images/sprite.png';
+$order: (0px, 0px, 0px, 0px, 47px, 40px, 130px, 103px, '../images/sprite.png', 'order', );
+$print-name: 'print';
+$print-x: 47px;
+$print-y: 0px;
+$print-offset-x: -47px;
+$print-offset-y: 0px;
+$print-width: 48px;
+$print-height: 36px;
+$print-total-width: 130px;
+$print-total-height: 103px;
+$print-image: '../images/sprite.png';
+$print: (47px, 0px, -47px, 0px, 48px, 36px, 130px, 103px, '../images/sprite.png', 'print', );
+$visa-name: 'visa';
+$visa-x: 26px;
+$visa-y: 71px;
+$visa-offset-x: -26px;
+$visa-offset-y: -71px;
+$visa-width: 28px;
+$visa-height: 27px;
+$visa-total-width: 130px;
+$visa-total-height: 103px;
+$visa-image: '../images/sprite.png';
+$visa: (26px, 71px, -26px, -71px, 28px, 27px, 130px, 103px, '../images/sprite.png', 'visa', );
+$webmoney-name: 'webmoney';
+$webmoney-x: 95px;
+$webmoney-y: 41px;
+$webmoney-offset-x: -95px;
+$webmoney-offset-y: -41px;
+$webmoney-width: 28px;
+$webmoney-height: 29px;
+$webmoney-total-width: 130px;
+$webmoney-total-height: 103px;
+$webmoney-image: '../images/sprite.png';
+$webmoney: (95px, 41px, -95px, -41px, 28px, 29px, 130px, 103px, '../images/sprite.png', 'webmoney', );
+$yad-name: 'yad';
+$yad-x: 0px;
+$yad-y: 71px;
+$yad-offset-x: 0px;
+$yad-offset-y: -71px;
+$yad-width: 26px;
+$yad-height: 32px;
+$yad-total-width: 130px;
+$yad-total-height: 103px;
+$yad-image: '../images/sprite.png';
+$yad: (0px, 71px, 0px, -71px, 26px, 32px, 130px, 103px, '../images/sprite.png', 'yad', );
+$spritesheet-width: 130px;
+$spritesheet-height: 103px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($arrow, $cut, $enjoy, $order, $print, $visa, $webmoney, $yad, );
+$spritesheet: (130px, 103px, '../images/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

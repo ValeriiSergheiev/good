@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ticket_www</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css">
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+</head>
+<body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+      <!-- header -->
+      <header class="page-header">
+        <div class="container">
+          <div class="header-top">
+            <div class="logo">
+              <a href="#"><img src="images/logo.png" alt="logo"></a>
+            </div>
+            <nav>
+              <ul class="menu">
+                <li><a href="#">главная</a></li>
+                <li><a href="#">о проекте</a></li>
+                <li><a href="#">купоны на заказ</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!-- end header -->
+
+      <!--  main section -->
+      <main>
+        <div class="container">
+
+          <div class="breadcrumbs-row">
+            <ul class="breadcrumbs">
+              <li><a href="#">Главная</a></li>
+              <li>/</li>
+              <li><a href="#">Каталог</a></li>
+              <li>/</li>
+              <li><a href="#">Купон на 20 минут массажа</a></li>
+            </ul>
+          </div>
+          
+          <section class="order">
+            <h1>На заказ</h1>
+            <article>Купон будет готов в течении 48 часов с момента заказа, так же после выполнения и отправление его на почту, он будет размещен на сайте в соответствующей категории.</article>
+            <div class="content-wrapper">
+              <form action="#" id="order">
+
+                <div class="order-form-wrapper">
+                  <div class="order-form-left">
+                    <label>Имя получателя<input type="text" placeholder="Артур" required></label><br>
+                    <label>Ваш email<input type="email" placeholder="info@ticket.ru" required></label><br>
+                    <label>Вид услуги<input type="text" placeholder="Вино в подъезд"></label>
+                  </div>
+                  <div class="order-form-right">
+                    <textarea placeholder="Доп. комментарии"></textarea>
+                  </div>
+                </div>
+
+                <p>Цена<span>350<i class="fa fa-rub" aria-hidden="true"></i></span></p>
+                <p>Способ оплаты</p>
+                <ul class="payment-method">
+                  <li><a href="#"><i class="icon icon-visa"></i><span>Пластиковые карты</span></a></li>
+                  <li><a href="#"><i class="icon icon-yad"></i>Яндекс.Деньги</a></li>
+                  <li><a href="#"><i class="icon icon-webmoney"></i>WebMoney</a></li>
+                </ul>
+                <button class="btn-form">заказать</button>
+              </form>
+              
+            </div>
+
+            <div class="vk-form-widget">
+              <img src="images/vk-form.jpg" alt="vk-form">
+            </div>
+
+          </section>
+
+        </div>
+      </main>
+      <!--  end main section -->
+
+      <!-- footer -->
+      <div class="line-footer">
+        <div class="icon-cut"></div>
+      </div>
+
+      <footer>
+        <div class="container">
+          <div class="flex-container">
+
+            <div class="flex-item-footer">
+              <div class="logo">
+                <a href="#"><img src="images/logo.png" alt="logo"></a>
+              </div>
+            </div>
+
+            <div class="flex-item-footer">
+              <div class="menu-bottom">
+                <nav>
+                  <ul class="menu-footer">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О проекте</a></li>
+                    <li><a href="#">Купоны на заказ</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+
+            <div class="flex-item-footer">
+              <div class="widget">
+                <img src="images/vk-vidget.jpg" alt="widget-vk">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+      <!-- end footer -->
+
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+          function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X');ga('send','pageview');
+      </script>
+
+      <!-- build:js scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="/bower_components/jquery/dist/jquery.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
+
+      <!-- build:js scripts/main.js -->
+      <script src="scripts/main.js"></script>
+      <!-- endbuild -->
+    </body>
+    </html>

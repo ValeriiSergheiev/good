@@ -1,0 +1,9 @@
+.about {
+  @extend .order;
+  article {
+    font-size: 17px;
+  }
+  img {
+    margin: 35px 0;
+  }
+}

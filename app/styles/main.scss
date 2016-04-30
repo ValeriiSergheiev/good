@@ -1,0 +1,341 @@
+// bower:scss
+// endbower
+
+@import "bourbon/bourbon";
+@import 'fonts';
+@import 'vars';
+@import 'sprite';
+
+body {
+  min-height: 990px;
+  font-family: Arial;
+  color: #000;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  outline: none;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 990px;
+  margin: 0 auto;
+}
+
+.before {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+.after {
+  @extend .before;
+}
+
+/* header */
+.home-header {
+  //display: none;
+  background-color: $accent-color;
+  height: 570px;
+}
+
+.header-top {
+  @include clearfix;
+  padding-top: 30px;
+  nav {
+    float: right;
+    margin-right: 150px;
+  }
+}
+
+.logo {
+  float: left;
+  a:hover {
+    opacity: .7;
+  }
+}
+
+.menu {
+  margin: 0;
+  li {
+    list-style-type: none;
+    float: left;
+    font-family: Arial-bold;
+    font-size: 20px;
+    margin-left: 90px;
+    &:first-child {
+      margin-left: 0;
+    }
+    a {
+      line-height: 42px;
+      vertical-align: middle;
+      text-transform: uppercase;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+        transition: .5s;
+      }
+    }
+  }
+}
+
+.header-main {
+  @include clearfix;
+  margin-top: 60px;
+  .header-main-text {
+    float: left;
+    text-transform: uppercase;
+    font-family: Arial-bold;
+    text-align: center;
+    h1 {
+      font-size: 70px;
+      margin-bottom: 0;
+    }
+    h2 {
+      font-size: 42px;
+      margin-top: 10px;
+    }
+  }
+  .header-main-card {
+    float: right;
+  }
+}
+
+.header-bottom {
+  margin-top: 80px;
+}
+
+.order-step {
+  @include clearfix;
+  margin: 0 0 0 70px;
+  li {
+    float: left;
+    margin-right: 60px;
+    &:last-child {
+      margin-right: 0;
+      i {
+        vertical-align: top;
+      }
+      span {
+        display: inline-block;
+      }
+    }
+  }
+  span {
+    font-size: 18px;
+    margin-left: 20px;
+  }
+}
+
+/* main section */
+.category {
+  background-color: $grey-color;
+  margin-top: 40px;
+  position: relative;
+  padding: 15px 20px;
+  &::before {
+    @extend .before;
+    content: 'Категории:';
+    font-size: 18px;
+    font-family: Arial-bold;
+    color: #777;
+    top: 27px;
+  }
+}
+
+.category-list {
+  @include clearfix;
+  margin-left: 70px;
+  li {
+    float: left;
+    margin-right: 3px;
+    padding: 14px 0;
+    &:nth-child(5) {
+      margin-right: 0;
+    }
+    a {
+      font-family: Arial-bold;
+      font-size: 18px;
+      padding: 12px 35px 12px 12px;
+      position: relative;
+      &:hover, &:focus {
+        background-color: $accent-color;
+        border-radius: 20px;
+        transition: .07s;
+        &::after {
+          @extend .after;
+          content: '';
+          background-image: url('../images/close.png');
+          display: block;
+          width: 14px;
+          height: 15px;
+          top: 15px;
+          right: 12px;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  //display: none;
+  margin-top: 30px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-item {
+  width: 315px;
+  height: 315px;
+  text-align: center;
+  position: relative;
+  img {
+    margin-top: 60px;
+  }
+  h5 {
+    font-family: Arial-bold;
+    font-size: 24px;
+    margin: 15px 0 0;
+  }
+  a {
+    display: none;
+    font-family: Arial-bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: $inactive-color;
+    padding: 15px 88px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 15px;
+    left: 12px;
+    &:hover {
+      background-color: $accent-color;
+    }
+    &:active {
+      background-color: $active-color;
+    }
+  }
+  &:hover {
+    background-color: $grey-color;
+    cursor: default;
+    transition: .2s;
+  }
+  &:hover .price-circle {
+    z-index: 1;
+    transition: .2s;
+  }
+  &:hover a {
+    display: block;
+  }
+}
+
+.price-circle {
+  width: 70px;
+  height: 70px;
+  background-color: $accent-color;
+  border-radius: 35px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: -1;
+  font-family: Arial-bold;
+  font-size: 28px;
+  line-height: 70px;
+  vertical-align: middle;
+}
+/* end main section */
+
+/* footer */
+.line-footer {
+  position: relative;
+  height: 0;
+  width: calc(100% - (100% - 990px)/2 - 45px);
+  top: 0;
+  left: calc((100% - 990px)/2 + 45px);
+  border-top: 2px dashed #d2d2d2;
+  margin-top: 30px;
+}
+
+footer {
+  height: 330px;
+  margin-top: 35px;
+}
+
+.flex-item-footer {
+  &:nth-child(1), &:nth-child(2) {
+    margin-top: 50px;
+  }
+}
+
+.menu-footer {
+  li {
+    margin-bottom: 20px;
+    a {
+      font-family: Arial-bold;
+      font-size: 18px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+/* end footer */
+
+/*  sprites */
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon-order {
+  @include sprite($order);
+}
+.icon-arrow {
+  @include sprite($arrow);
+}
+.icon-print {
+  @include sprite($print);
+}
+.icon-enjoy {
+  @include sprite($enjoy);
+}
+.icon-cut {
+  @include sprite($cut);
+  position: absolute;
+  top: -16px;
+  left: -45px;
+}
+.icon-visa {
+  @include sprite($visa);
+  float: left;
+  margin-right: 10px;
+}
+.icon-yad {
+  @include sprite($yad);
+  float: left;
+  margin-right: 10px;
+}
+.icon-webmoney {
+  @include sprite($webmoney);
+  float: left;
+  margin-right: 10px;
+}
+
+/* other page styles */
+@import 'kartochka';
+@import 'order';
+@import 'about';
